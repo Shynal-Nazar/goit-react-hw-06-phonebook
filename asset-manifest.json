@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Shynal-Nazar.github.io/goit-react-hw-06-phonebook/static/css/main.7acaea2f.css",
-    "main.js": "/Shynal-Nazar.github.io/goit-react-hw-06-phonebook/static/js/main.6ab346c7.js",
+    "main.js": "/Shynal-Nazar.github.io/goit-react-hw-06-phonebook/static/js/main.4e86eb6d.js",
     "index.html": "/Shynal-Nazar.github.io/goit-react-hw-06-phonebook/index.html",
     "main.7acaea2f.css.map": "/Shynal-Nazar.github.io/goit-react-hw-06-phonebook/static/css/main.7acaea2f.css.map",
-    "main.6ab346c7.js.map": "/Shynal-Nazar.github.io/goit-react-hw-06-phonebook/static/js/main.6ab346c7.js.map"
+    "main.4e86eb6d.js.map": "/Shynal-Nazar.github.io/goit-react-hw-06-phonebook/static/js/main.4e86eb6d.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.6ab346c7.js"
+    "static/js/main.4e86eb6d.js"
   ]
 }
