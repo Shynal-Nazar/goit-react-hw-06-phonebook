@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
 
 const initialState = {
-  contacts: [
+  items: [
     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
     { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
@@ -21,16 +21,16 @@ export const ContactSplice = createSlice({
         name: action.payload.nameInput,
         number: action.payload.numberInput,
       };
-      const contactInState = state.contacts.some(
-        contact =>
-          contact.name.toLowerCase() === action.payload.nameInput.toLowerCase()
+      const contactInState = state.items.some(
+        item =>
+          item.name.toLowerCase() === action.payload.nameInput.toLowerCase()
       );
       if (contactInState) {
         alert(`${action.payload.nameInput} is already in contacts!`);
         return;
       }
 
-      state.contacts.splice(0, 0, newContact);
+      state.items.splice(0, 0, newContact);
     },
 
     handleChangeFilter(state, action) {
@@ -38,7 +38,7 @@ export const ContactSplice = createSlice({
     },
 
     handleRemove(state, action) {
-      state.contacts = state.contacts.filter(({ id }) => id !== action.payload);
+      state.items = state.items.filter(({ id }) => id !== action.payload);
     },
   },
 });
