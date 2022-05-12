@@ -1,11 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ContactListItem from './ContactsItem';
 import { ContactsSection, ContactsList } from './Contact.styled';
 import { handleRemove } from 'redux/contactsSplice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-const ContactList = ({ filteredContacts }) => {
+const ContactList = () => {
+  const contacts = useSelector(state => state.contacts.items);
+  const filter = useSelector(state => state.contacts.filter);
+
+  const getFilteredContacts = () => {
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  };
+
+  const filteredContacts = getFilteredContacts();
   const dispatch = useDispatch();
   return (
     filteredContacts.length > 0 && (
@@ -26,13 +35,3 @@ const ContactList = ({ filteredContacts }) => {
 };
 
 export default ContactList;
-
-ContactList.propTypes = {
-  filteredContacts: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ),
-};
